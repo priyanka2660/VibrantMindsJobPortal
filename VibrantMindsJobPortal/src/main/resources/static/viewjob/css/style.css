@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+
+ /*-----------------------------addnewtable----------------------------*/  
+  .tablearea{
+	width:75%;
+	height:450px;	
+	margin-left:56%;
+	position: absolute;
+	float:center;
+    bottom: -0.20px;
+    right: 0;
+    top:30;
+
+}
+  
+table
+ {
+    display: inline-block;
+    align:center;
+}
+
+table tr th
+{
+	width:1000px;
+}
+
+table thead tr
+{
+	width:800px;
+}
+.card-body{
+	width:700px;
+	height:350px;
+}
+
+    
+/*-------------------------------------------------------------------------*/   

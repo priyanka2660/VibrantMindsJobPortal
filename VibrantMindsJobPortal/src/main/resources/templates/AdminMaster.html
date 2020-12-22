@@ -1,0 +1,114 @@
+<!doctype html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+  	<title>Sidebar 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+        
+		<div th:fragment="admin">
+		<!-- banner--> 
+	    <div>
+		<div class="container-fluid " style="background-image: url(../images/banner7.png);background-repeat:no-repeat; width:100%; ">
+         <div class="text-white text-center py-4 px-4 my-0">
+        <div>
+           <!--    <h2 class="card-title h1-responsive mt-0" style="color:white;"><strong>VibrantMinds Technology</strong></h2>-->
+           <img src="../images_1/logoP.png" class="img-fluid" alt="Responsive image">
+            <p class="font-italic mr-2" style="color:purple;">Build your dream job here</p>
+           
+        </div>
+        </div>
+       </div>
+      </div>		
+		<!-- End of banner -->
+   
+     
+		<!-- sidebar -->
+		<div class="wrapper d-flex align-items-stretch">
+			  
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4 pt-5">
+		            <img src="../images_1/logoP.png" class="img-fluid" alt="Responsive image">
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">JobMaster</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a th:href="@{/newjob}">New Job</a>
+                </li>
+                <li>
+                    <a th:href="@{/viewjob}">View Current Job</a>
+                </li>
+                <li>
+                    <a href="#">View All</a>
+                </li>
+	            </ul>
+	          </li>
+	          <li>
+	              <a href="#">About</a>
+	          </li>
+	          <li class="active">
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Candidate</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                <li>
+                    <a href="#">View Candidate</a>
+                </li>
+           
+              </ul>
+	          </li>
+	           <li class="active">
+              <a href="#Schedulemenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Schedule Interview</a>
+              <ul class="collapse list-unstyled" id="Schedulemenu">
+                <li>
+                    <a href="#">Create Schedule</a>
+                </li>
+           
+              </ul>
+	          </li>
+	           <li>
+	              <a href="#">Logout</a>
+	          </li>
+           
+                </ul>
+	          </li>
+	         
+	        </ul>
+
+	       
+	          </form>
+					</div>
+
+	       
+	      </div>
+    	</nav>
+      <!-- -----------------end of sidebar -->  
+         <!-- form -->
+    
+      
+       
+     <!-- end of form -->
+      </div>            
+      
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    
+  
+    
+  </body>
+</html>
