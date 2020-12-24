@@ -52,11 +52,12 @@
 	<!-- ------------- -->
 
 	<!-- form -->
-
 <div class="formarea" id="adminform">
 
-
-
+<div id="myalert" class="alert alert-success collapse">
+<a href="#" class="" data-dismiss="alert">&times;</a>
+<h2 th:text="${message}"></h2>
+</div>
 
 
  <span class="admintitle">Add New Job</span>		
@@ -129,7 +130,7 @@
  
   <button type="submit"  id="btn" class="btn-grad" >submit</button> 
  
-  <h1 id="h" th:text="${message}"></h1>
+  
 
  
  
@@ -160,7 +161,15 @@
 
 <script type="text/javascript">
 
-
+$(document).ready(function()
+		{
+		$('#btn').click(function()
+				{
+			      $('#myalert').show('fade');
+			
+				});
+		
+		});
          
 
 

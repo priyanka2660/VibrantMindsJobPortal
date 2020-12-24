@@ -13,25 +13,57 @@
 
 }
   
-table
- {
-    display: inline-block;
-    align:center;
-}
 
-table tr th
-{
-	width:1000px;
-}
-
-table thead tr
-{
-	width:800px;
-}
-.card-body{
-	width:700px;
-	height:350px;
-}
 
     
 /*-------------------------------------------------------------------------*/   
+
+/*-------------------------------------------table--------------------------------*/
+	table, th, td {
+       border: 1px solid black;
+      }
+      
+     table
+     {
+     
+font-size:20px;    
+background: #9796f0;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fbc7d4, #9796f0);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        
+     }
+     
+     table th
+     {
+       font-size:15px;
+       font-family: "Times New Roman", Times, serif;
+       font-weight: bold;
+       
+     } 
+     
+        
+     table tr td
+      {
+       font-size:15px;
+       font-family: "Times New Roman", Times, serif;
+    
+       
+     } 
+     
+     .card
+     {
+          height:500%;
+          width: 118%;
+          position:absolute;
+          right:70px;
+          bottom: -50px;
+     
+     }
+ 
+     
+
+     
+     
+     
+     
+ /*----------------------------------------------------------------------------------------------------------*/    

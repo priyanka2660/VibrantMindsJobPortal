@@ -4,6 +4,8 @@ import java.sql.Date;
 
 import javax.persistence.*;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="jobprofile")
 public class AdminModel 
@@ -23,22 +25,24 @@ public class AdminModel
 @Column(name="package")
  private String jpackage;
 
+@Column(name="location")
+private String location;
+
 @Column(name="status")
  private String status;
  
 @Column(name="exp")
  private String exp;
 
-@Column(name="postdate")
  private Date pdate;
 
-@Column(name="lastdate")
+@Column(name="lastdate") 
  private Date ldate;
 
 @Column(name="skill")
  private String skill;
  
-@Column(name="jdes")
+@Column(name="jdes",length=1000)
 private String jdes;
  
  public int getJid() {
@@ -100,6 +104,13 @@ public String getJdes() {
 }
 public void setJdes(String jdes) {
 	this.jdes = jdes;
+}
+public String getLocation() {
+	return location;
+}
+public void setLocation(String location) {
+	this.location = location;
 } 
+
  
 }

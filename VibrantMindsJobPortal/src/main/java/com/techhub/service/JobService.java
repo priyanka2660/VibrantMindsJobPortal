@@ -1,17 +1,20 @@
 package com.techhub.service;
 
+import java.util.ArrayList;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.techhub.model.AdminModel;
 import com.techhub.repository.JobRepository;
+
+
 
 @Service("jobSer")
 public class JobService {
 	
 	@Autowired
 	JobRepository jobRepo;
-
+	List<AdminModel> list=new ArrayList<AdminModel>();
 	
 	public AdminModel saveJob(AdminModel job)
 	{
@@ -27,4 +30,22 @@ public class JobService {
 			return null;
 		}	
 	}
+	
+	 public List<AdminModel> getData()
+	   {
+		 list=jobRepo.findAll();
+		 
+		 return list;
+		   
+	   }
+	 
+	 
+	 public void deljob(int id)
+	 {
+		 jobRepo.deleteById(id);
+		 
+	 }
 }
+
+
+  

@@ -1,5 +1,5 @@
 <!DOCTYPE html >
-<html  xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
@@ -14,9 +14,9 @@
 	rel="stylesheet">
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- <link rel="stylesheet" href="viewjob/css/style.css">
- 
- <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="viewjob/css/style.css">
+
+<link rel="stylesheet" href="css/style.css">
 
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css" />
@@ -24,11 +24,7 @@
 	src="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.js"></script>
 
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$("#table_id").DataTable();
-	});
-</script>
+
 
 <!--                               -->
 </head>
@@ -37,68 +33,56 @@
 	<div th:replace="AdminMaster :: admin"></div>
 
 	<!-- ------------- -->
-	
-	
-	
-	
-	
-	
+
 	<!-- -------table -->
 
 	<div class="tablearea">
 		<div class="card ">
-			<div class="card-header text-center font-weight-bold">View Job
-			</div>
+			<div class="card-header text-center font-weight-bold">View Job</div>
 			<div class="card-body ">
 				<table class="table table-bordered table-hover table-sm"
-					id="table_id">
+					id="myTable">
 					<thead>
 						<tr>
 
 							<th scope="col" style="text-align: center">Job id</th>
-							<th scope="col" style="text-align: center">Package</th>
+							<th scope="col" style="text-align: center">job name</th>
+							<th scope="col" style="text-align: center">company name</th>
+							<th scope="col" style="text-align: center">package</th>
 							<th scope="col" style="text-align: center">Location</th>
-							<th scope="col" style="text-align: center">Job Description</th>
-							<th scope="col" style="text-align: center">Last date to
-								Apply</th>
-							<th scope="col" style="text-align: center">Job id</th>
-							<th scope="col" style="text-align: center">Package</th>
-							<th scope="col" style="text-align: center">Location</th>
-							<th scope="col" style="text-align: center">Job Description</th>
-							<th scope="col" style="text-align: center">Last date to
-								Apply</th>	
+							<th scope="col" style="text-align: center">Experience Status</th>
+							<th scope="col" style="text-align: center">Experience</th>
+							<th scope="col" style="text-align: center">Post date</th>
+							<th scope="col" style="text-align: center">Last date</th>
+							<th scope="col" style="text-align: center">Skills</th>
+							<th scope="col" style="text-align: center">job description</th>
 							<th style="text-align: center">DELETE</th>
 							<th style="text-align: center">UPDATE</th>
+							
 						</tr>
-					</thead>
-					<!--  
-			<tbody>
-			 
-			<c:forEach var="jobmodel" items="${jobList }">
-				<tr>
-  				<td style="text-align:center">${jobmodel.getName()}</td>
-				<td style="text-align:center">${jobmodel.getPack()}</td>
-				<td style="text-align:center">${jobmodel.getLocation()}</td>
-				<td style="text-align:center">${jobmodel.getDesc()}</td>
-				<td style="text-align:center">${jobmodel.getLasttoapply()}</td>
-				<td style="text-align:center"><a href='delCompyById?cid=${jobmodel.getId()}'>DELETE</a></td>
-				<td style="text-align:center"><a href=' updatejob?jid=${jobmodel.getId()}&name=${jobmodel.getName()}&pack=${jobmodel.getPack()}&loc=${jobmodel.getLocation()}&desc=${jobmodel.getDesc()}&dapply=${jobmodel.getLasttoapply()}'>UPDATE</a></td>
-				</tr>
-				</c:forEach>
+					   </thead>	
+						<tr th:each="job: ${jobModel}">
+							<td th:text="${job.jid}" />
+							<td th:text="${job.name}" />
+							<td th:text="${job.cname}" />
+							<td th:text="${job.jpackage}" />
+							<td th:text="${job.location}" />
+							<td th:text="${job.status}" />
+							<td th:text="${job.exp}" />
+							<td th:text="${job.pdate}" />
+							<td th:text="${job.ldate}" />
+							<td th:text="${job.skill}" />
+							<td th:text="${job.jdes}" />
+                            <td style="text-align: center"><a th:href="@{'/delete/'+${job.jid}}">DELETE</a></td>
+							<td style="text-align: center"><a href="#">UPDATE</a></td>
+						</tr>
 				
-			</tbody>
-			--->
-				</table>
+						</table>
 			</div>
 		</div>
 
 	</div>
 	<!-- ---------------end of table -->
-
-
-
-
-
 
 	<!-- -------- Scripts    ---- -->
 
@@ -106,6 +90,15 @@
 	<script src="js/popper.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
+	<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+	
+	$(document).ready( function () {
+	    $('#myTable').DataTable();
+	} );
+	
+	
+	</script>
 
 	<!-- ---------------- -->
 </body>
