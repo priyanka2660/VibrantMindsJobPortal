@@ -2,6 +2,8 @@ package com.techhub.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.techhub.model.AdminModel;
@@ -43,6 +45,15 @@ public class JobService {
 	 public void deljob(int id)
 	 {
 		 jobRepo.deleteById(id);
+		 
+	 }
+	 
+	 public AdminModel findbyid(Integer id)
+	 {
+		AdminModel a=jobRepo.findById(id).orElse(null);
+		return a;
+		
+		 
 		 
 	 }
 }

@@ -73,8 +73,8 @@
 							<td th:text="${job.ldate}" />
 							<td th:text="${job.skill}" />
 							<td th:text="${job.jdes}" />
-                            <td style="text-align: center"><a th:href="@{'/delete/'+${job.jid}}">DELETE</a></td>
-							<td style="text-align: center"><a href="#">UPDATE</a></td>
+                            <td style="text-align:center;"><button type="submit" class="btn btn-danger button "><a th:href="@{'/delete/'+${job.jid}}"><div class="text" >DELETE</div></a></button></td>
+							<td style="text-align:center;"><button type="submit" class="btn  bg-primary" style="color: red;"><a th:href="@{'/update/' +${job.jid}}"><div class="text">UPDATE</div></a></button></td>
 						</tr>
 				
 						</table>

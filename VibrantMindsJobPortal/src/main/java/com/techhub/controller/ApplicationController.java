@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.techhub.model.AdminModel;
 import com.techhub.model.LoginModel;
@@ -104,7 +107,28 @@ public class ApplicationController {
 /*==========================================================================================*/
 	
 	
-	
+/*========================================Update Job================================================*/
+       @GetMapping("/update/{id}" )
+       public ModelAndView update(@PathVariable("id") Integer id )
+       { 
+       ModelAndView mv=new ModelAndView("UpdateJob");
+        AdminModel job=jobSer.findbyid(id);
+        mv.addObject("jobobj",job);
+       
+    	    return mv;
+       }	
+       
+       @PostMapping("/updateAll")
+       public String updateAll(AdminModel m)
+       {
+    	   jobSer.saveJob(m);
+    	   return "redirect:/viewjob";
+       }
+    	  
+ /*===================================================================================================*/      
+       
+
+/*===================================================================================================*/	
 	
 	
 	

@@ -53,15 +53,19 @@ background: linear-gradient(to right, #fbc7d4, #9796f0); /* W3C, IE 10+/ Edge, F
      .card
      {
           height:500%;
-          width: 118%;
+          width: 130%;
           position:absolute;
           right:70px;
           bottom: -50px;
      
      }
  
-     
-
+    .text
+    {
+          color:#FFFFFF;
+      
+    }
+    
      
      
      
