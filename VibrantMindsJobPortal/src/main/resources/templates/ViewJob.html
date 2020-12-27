@@ -12,10 +12,9 @@
 <link
 	href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
 	rel="stylesheet">
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="viewjob/css/style.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="css/style.css">
 
 <link rel="stylesheet" type="text/css"
@@ -30,7 +29,7 @@
 </head>
 <body>
 	<!-- adminMaster -->
-	<div th:replace="AdminMaster :: admin"></div>
+	<div th:replace=" AdminMaster :: admin"></div>
 
 	<!-- ------------- -->
 
@@ -50,31 +49,22 @@
 							<th scope="col" style="text-align: center">company name</th>
 							<th scope="col" style="text-align: center">package</th>
 							<th scope="col" style="text-align: center">Location</th>
-							<th scope="col" style="text-align: center">Experience Status</th>
-							<th scope="col" style="text-align: center">Experience</th>
-							<th scope="col" style="text-align: center">Post date</th>
-							<th scope="col" style="text-align: center">Last date</th>
-							<th scope="col" style="text-align: center">Skills</th>
-							<th scope="col" style="text-align: center">job description</th>
 							<th style="text-align: center">DELETE</th>
 							<th style="text-align: center">UPDATE</th>
+							<th style="text-align: center">VIEW MORE</th>
+							
 							
 						</tr>
 					   </thead>	
 						<tr th:each="job: ${jobModel}">
-							<td th:text="${job.jid}" />
-							<td th:text="${job.name}" />
-							<td th:text="${job.cname}" />
-							<td th:text="${job.jpackage}" />
-							<td th:text="${job.location}" />
-							<td th:text="${job.status}" />
-							<td th:text="${job.exp}" />
-							<td th:text="${job.pdate}" />
-							<td th:text="${job.ldate}" />
-							<td th:text="${job.skill}" />
-							<td th:text="${job.jdes}" />
-                            <td style="text-align:center;"><button type="submit" class="btn btn-danger button "><a th:href="@{'/delete/'+${job.jid}}"><div class="text" >DELETE</div></a></button></td>
-							<td style="text-align:center;"><button type="submit" class="btn  bg-primary" style="color: red;"><a th:href="@{'/update/' +${job.jid}}"><div class="text">UPDATE</div></a></button></td>
+							<td style="text-align: center" th:text="${job.jid}" />
+							<td style="text-align: center" th:text="${job.name}" />
+							<td style="text-align: center" th:text="${job.cname}" />
+							<td style="text-align: center" th:text="${job.jpackage}" />
+							<td style="text-align: center" th:text="${job.location}" />
+                            <td style="text-align:center;"><a th:href="@{'/delete/'+${job.jid}}"><i class="fa fa-trash" style="font-size:20px; color:red;" ></i></a></td>
+							<td style="text-align:center;"><a th:href="@{'/update/' +${job.jid}}"><i class="fa fa-edit" style="font-size:20px; color:blue;"></i></a></td>
+							<td style="text-align:center;"><a th:href="@{'/viewjob/' +${job.jid}}"><i class="fa fa-list" style="font-size:20px; color:green;" ></i></a></td>
 						</tr>
 				
 						</table>
@@ -91,6 +81,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+	<script src="https://use.fontawesome.com/8fea9e74be.js"></script>
 	<script type="text/javascript">
 	
 	$(document).ready( function () {

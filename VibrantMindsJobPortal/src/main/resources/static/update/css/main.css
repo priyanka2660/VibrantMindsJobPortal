@@ -2,16 +2,17 @@
 
   /*-----------------------------addnewform----------------------------*/  
   .formarea{
-    width:75%;
+
+	width:75%;
     background-repeat: no-repeat;
-	height:130%;
+	height:110%;
 	margin-left:25%;
 	position:absolute;
 	padding:75px;
 	float:center-bottom;
     bottom: -0.20px;
-    right: 300px;;
-    top:-450px; 
+    right: 30px;;
+    top:-320px;	
     background: #C6FFDD;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #f7797d, #FBD786, #C6FFDD);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #f7797d, #FBD786, #C6FFDD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */

@@ -38,7 +38,15 @@ public class ApplicationController {
 	
 	/*================home page========================================*/
 	@GetMapping("/")
-	public String goHome()
+	public String goHome(Model m)
+	{
+	 list=jobSer.getDatabyDate();
+	 m.addAttribute("homeModel",list);
+	 return "index";
+	}
+	
+	@GetMapping("/admin")
+	public String goAdmin()
 	{
 		return "login";
 	}
@@ -108,14 +116,14 @@ public class ApplicationController {
 	
 	
 /*========================================Update Job================================================*/
+	
        @GetMapping("/update/{id}" )
-       public ModelAndView update(@PathVariable("id") Integer id )
+       public String update(@PathVariable("id") Integer id, Model m )
        { 
-       ModelAndView mv=new ModelAndView("UpdateJob");
         AdminModel job=jobSer.findbyid(id);
-        mv.addObject("jobobj",job);
+        m.addAttribute("jobobj",job);
        
-    	    return mv;
+    	    return "UpdateJob";
        }	
        
        @PostMapping("/updateAll")
@@ -128,9 +136,26 @@ public class ApplicationController {
  /*===================================================================================================*/      
        
 
-/*===================================================================================================*/	
-	
-	
-	
+/*=======================================view job===================================================*/
+       
+       @GetMapping("/viewjob/{vid}" )
+       public ModelAndView viewupdate(@PathVariable("vid") Integer vid )
+       { 
+       ModelAndView mv=new ModelAndView("ViewMore");
+        AdminModel job=jobSer.findbyid(vid);
+        mv.addObject("jobobj",job);
+       
+    	    return mv;
+       }
+       
+        @PostMapping("/deleteAll")
+        public String deleteAll(AdminModel n)
+        {
+        	Integer sid=n.getJid();
+        	jobSer.deljob(sid);
+        	
+        	return "ViewJob";
+        }
+/*==================================================================================================*/	
 }
 

@@ -51,9 +51,15 @@ public class JobService {
 	 public AdminModel findbyid(Integer id)
 	 {
 		AdminModel a=jobRepo.findById(id).orElse(null);
-		return a;
-		
+		return a;		 
 		 
+	 }
+	 
+	 public List<AdminModel> getDatabyDate()
+	 {
+		 list=jobRepo.getDatabyDate();
+		 
+		 return list;
 		 
 	 }
 }
