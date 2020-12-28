@@ -15,12 +15,13 @@
 <body>
 	<!-- --------------------------            nav bar                 ----------- -->
 	<header>
-		<div class="container-fluid  homenav ">
+	   <div class="navbar-wrapper">
+		<div class=" container container-fluid w-250 homenav" style="max-width:100%;">
 
-			<nav class=" navbar navbar-expand-lg navbar-light nav-fill w-100  ">
+			<nav class=" navbar navbar-expand-lg navbar-wrapper navbar-light w-250">
 				<a class="navbar-brand" href="#"> <img
-					src="../images_1/logoP.png" class="img-fluid"
-					alt="Responsive image" style="width: 100px;"></a>
+					src="../homepage/images/logo.png" class="img-fluid"
+					alt="Responsive image" style="width: 150px;"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -60,9 +61,7 @@
 					<a href="#" class="nav-item nav-link">Student</a>
 				</div>
 			</nav>
-
-
-
+        </div>
 		</div>
 
 
@@ -79,21 +78,22 @@
 	
 	<div class="py-5 heading">
 	                    
-	                    <h1 style="text-decoration:underline;">upcoming campuses</h1>         
+	                    <h1 class="headtext">upcoming campuses</h1>
+	                    <hr style="border:2px solid purple;"></hr>         
 	                    </div>
-	<div class="container py-5">
+	<div class="container py-3">
 	<div class="row">	
 	<tr th:each="job: ${homeModel}">
-	<div class="col-md-4 mt-2">
-	<div class="card">	
+	<div class="col-md-3 mt-2">
+	<div class="card card text-dark cards mb-3">	
 	<div class="card-body">
-    <h1 class="card-title"> <h1 style="text-align: center" th:text="${job.name}" ></h1></h1>	
+    <h3 class=" card-title"> <h3 style="text-align: center" th:text="${job.name}" ></h3></h3>	
 	<p class="card-text">
-<h5>company name:</h5><td style="text-align: center" th:text="${job.cname}" /></br>
-<h5>package:</h5><td style="text-align: center" th:text="${job.jpackage}" /></br>
- <h5> location:</h5> <td style="text-align: center" th:text="${job.location}" /></br>
-  <h5> post date:<h5></h5> <td style="text-align: center" th:text="${job.pdate}" /></br>	
-   <h5>last date to apply:</h5> <td style="text-align: center" th:text="${job.ldate}" /></br>								
+  <h5>company name:</h5><td th:text="${job.cname}" /></br>
+  <h5>package:</h5><td th:text="${job.jpackage}" /></br>
+  <h5> location:</h5> <td th:text="${job.location}" /></br>
+   <h5> post date:<h5></h5> <td  th:text="${job.pdate}" /></br>	
+   <h5>last date to apply:</h5> <td th:text="${job.ldate}" /></br>								
 	</p>	
 	</div>		
 	</div>	
