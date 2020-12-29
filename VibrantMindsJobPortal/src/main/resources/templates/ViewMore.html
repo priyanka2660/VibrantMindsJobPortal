@@ -128,7 +128,7 @@
        <button type="submit"  th:formaction="@{/updateAll}"  formmethod="post"  id="btn" class="btn-grad" >update</button>
        </div>
         <div class=" col-md-3 ">
-        <button type="submit"  th:formaction="@{/deleteAll}" formmethod="post"  id="btn" class="btn-grad" >Delete</button>
+        <button type="submit"  th:formaction="@{/deleteAll}"  formmethod="post"  id="del" class="btn-grad" >Delete</button>
          </div>
         </div>
        
@@ -158,6 +158,15 @@
 	<script th:src="@{/js/bootstrap.min.js}"></script>
 	<script th:src="@{/js/main.js}"></script>
 	
+	
+	
+	
+<script type="text/javascript"> document.getElementById('del').onclick = function(e){
+    if( !confirm('Are you sure?') ) {
+        e.preventDefault();
+    }
+}
+</script>
 
 
 

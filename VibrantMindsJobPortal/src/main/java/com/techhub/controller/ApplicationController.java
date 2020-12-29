@@ -35,6 +35,19 @@ public class ApplicationController {
 	
 /*===========================================================*/	
 	
+/*===============================Admin page=======================================*/
+	
+	@GetMapping("/admin")
+	public String goAdmin()
+	{
+		return "login";
+	}
+	
+
+		
+/*=========================================================================*/
+	
+	
 	
 	/*================home page========================================*/
 	@GetMapping("/")
@@ -45,11 +58,7 @@ public class ApplicationController {
 	 return "index";
 	}
 	
-	@GetMapping("/admin")
-	public String goAdmin()
-	{
-		return "login";
-	}
+	
 /*==================================================================================*/	
 
 /*=======================AdminMaster========================================================================= */	
@@ -93,10 +102,22 @@ public class ApplicationController {
 	
 /*=========================================view job========================================*/
 	
+	
 	@GetMapping("/viewjob")
+	public String goView(Model m)
+	{
+	 list=jobSer.getDatabyDate();
+	 m.addAttribute("homeModel",list);
+	 return "CurrentViewJob";
+	}
+	
+	
+	
+	
+	@GetMapping("/viewjoball")
 	public String viewjob( Model m)
 	{
-	     list=jobSer.getData();
+	    list=jobSer.getData();
 	    m.addAttribute("jobModel",list);
 		return "ViewJob";
 	}	
