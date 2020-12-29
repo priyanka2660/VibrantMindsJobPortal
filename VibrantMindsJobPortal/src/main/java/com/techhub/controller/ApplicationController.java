@@ -108,7 +108,7 @@ public class ApplicationController {
 	{
 	 list=jobSer.getDatabyDate();
 	 m.addAttribute("homeModel",list);
-	 return "CurrentViewJob";
+	 return "ViewCurrentJob";
 	}
 	
 	
@@ -126,11 +126,18 @@ public class ApplicationController {
 	
 /*=========================================Delete job=======================================*/
 	
-	@GetMapping("/delete/{id}")
+	@GetMapping("/Currentdelete/{id}")
 	public String delete(@PathVariable("id") Integer id )
 	{
 	      jobSer.deljob(id);
 	      return "redirect:/viewjob";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String deleteAll(@PathVariable("id") Integer id )
+	{
+	      jobSer.deljob(id);
+	      return "redirect:/viewjoball";
 	}
 	
 /*==========================================================================================*/
@@ -159,6 +166,16 @@ public class ApplicationController {
 
 /*=======================================view job===================================================*/
        
+       @GetMapping("/viewCurrentjob/{vid}" )
+       public ModelAndView viewcurrentupdate(@PathVariable("vid") Integer vid )
+       { 
+       ModelAndView mv=new ModelAndView("ViewCurrentMore");
+        AdminModel job=jobSer.findbyid(vid);
+        mv.addObject("jobobj",job);
+       
+    	    return mv;
+       } 
+              
        @GetMapping("/viewjob/{vid}" )
        public ModelAndView viewupdate(@PathVariable("vid") Integer vid )
        { 
@@ -169,14 +186,23 @@ public class ApplicationController {
     	    return mv;
        }
        
+        @PostMapping("/deleteCurrentAll")
+        public String deleteCurrentAll(AdminModel n)
+        {
+        	Integer sid=n.getJid();
+        	jobSer.deljob(sid);
+        	
+        	return "redirect:/viewjob";
+        }  
+        
         @PostMapping("/deleteAll")
         public String deleteAll(AdminModel n)
         {
         	Integer sid=n.getJid();
         	jobSer.deljob(sid);
         	
-        	return "ViewJob";
-        }
+        	return "redirect:/viewjoball";
+        } 
 /*==================================================================================================*/	
 }
 
