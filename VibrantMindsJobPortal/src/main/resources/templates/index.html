@@ -10,6 +10,7 @@
 	integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
 	crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" th:href="@{/homepage/css/home.css}">
+<link rel="stylesheet" type="text/css" th:href="@{/homepage/css/style.css}">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -85,8 +86,8 @@
 	
 	<div class="py-5 heading">
 	                    
-	                    <h1 class="headtext">upcoming campuses</h1>
-	                    <hr style="border:2px solid purple;"></hr>         
+  <h1 class="headtext">upcoming campuses</h1>
+  <hr style="border:2px solid purple;"></hr>         
 	                    </div>
 	<div class="container py-3">
 	<div class="row">	
@@ -95,14 +96,14 @@
 	<div class="card card text-dark cards mb-3" style="width: 19rem;height: 15rem;">	
 	<div class="card-body">
     <h3 class=" card-title"> <h3 style="text-align: center;position:absolute;top:4px; left:40px;" th:text="${job.name}" ></h3></h3>	
- 	<div class="cbody"Style="position:absolute; top:30px;">
+ 	<div class="cbody"Style="position:absolute; top:50px;">
 	<p class="card-text"style="margin:auto;">
   <label><h5 style="display: inline">company name:</h5>&nbsp;&nbsp;<td style="display: inline" th:text="${job.cname}" /></label></br>
   <h5 style="display: inline">package:</h5>&nbsp;&nbsp;<td style="display: inline" th:text="${job.jpackage}" /></br>
   <h5 style="display: inline"> location:</h5>&nbsp;&nbsp; <td  style="display: inline" th:text="${job.location}" /></br>
    <h5 style="display: inline"> post date:</h5> &nbsp;&nbsp;<td style="display: inline"  th:text="${job.pdate}" /></br>	
    <h5 style="display: inline">last date to apply:</h5>&nbsp;&nbsp;<td style="display: inline" th:text="${job.ldate}" /></br>
-   <button type="submit" class="btn btn-success" Style="margin-left:69px;margin-top:6px;">Apply Here</button>						
+   <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#registerpage" Style="margin-left:69px;margin-top:6px;">Apply Here</button>						
 	</p>	
 	</div>
 	</div>		
@@ -113,8 +114,50 @@
 	</tr>
 
 	<!-- ----------------------------------------------------------------------------------------------- -->
+<!-- ------------------ Registration Form  --------------------------------------------------------- -->
+<div class="modal fade" id="registerpage">
+<div class="modal-dialog ">
+<div class="modal-content ">
 
+<!-- ------------------------------------form------------------------------------------------------ -->
 
+<div class="regform">
+<form th:action="@{/regsave}" method="post">
+<div class="modal-header text-center">
+<h4  class="modal-title text-center w-100 font-weight-bold">Create Account </h4>
+<span type="button" class="close" data-dismiss="modal" aria-lable="close">&times</span>
+</div>
+<div class="form-group">
+    <label >User Name</label>
+    <input type="text" class="form-control" name="username"  placeholder="Enter Username">
+  
+  </div>
+  <div class="form-group">
+    <label >Email address</label>
+    <input type="email" class="form-control"  name="email"  aria-describedby="emailHelp" placeholder="Enter email">
+    
+  </div>
+  <div class="form-group">
+    <label >Password</label>
+    <input type="password" class="form-control"  name="password"   placeholder=" Enter Password">
+  </div>
+   <div class="form-group">
+    <label >Contact</label>
+    <input type="text" class="form-control"  name="contact"  placeholder=" Enter Contact">
+  </div>
+  <button type="submit" class="btn btn-primary">Register</button>
+  <button type="submit" class="btn btn-primary">Log In</button>
+</form>
+</form>
+ <h2 th:text=${message}></h2>
+ </div>                    
+<!---------------------------------------------------------------------------------------------- -->
+</div>
+</div>
+</div>
+
+<!-- -----------------------------                             ----------->
+<!-- ---------------------------------------------------------------------------------------------- ----->
 	<!--=======================================scripts=======================================================-->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

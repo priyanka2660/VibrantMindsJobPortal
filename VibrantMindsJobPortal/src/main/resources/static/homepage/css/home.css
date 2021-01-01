@@ -52,10 +52,9 @@ ul li
 
 .homenav > nav
 {
-background: #CC95C0;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+background: #CC95C0;  
+background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);  
+background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); 
 
 }
 
@@ -77,7 +76,7 @@ background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+
           }
 
           .btn-grad:hover {
-            background-position: right center; /* change the direction of the change here */
+            background-position: right center;
             color: #fff;
             text-decoration: none;
           }
@@ -114,7 +113,11 @@ background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0); /* W3C, IE 10+
 	
 }
 /*===================================================================================================*/
+/*========================================forms======================================================*/
 
+
+
+/*====================================================================================================*/
 
 
 /*==================================================================================================*/

@@ -1,0 +1,38 @@
+
+.regform
+{
+	padding:10px;
+	background: #00b09b; 
+    background: -webkit-linear-gradient(to right, #96c93d, #00b09b);  
+    background: linear-gradient(to right, #96c93d, #00b09b); 
+	
+	
+}
+
+.regform  div
+{
+	padding:10px;
+}
+
+.regform input
+{
+	height:50px;
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+}
+
+.regform button
+{
+	margin-left:100px;
+	background-color:#008B8B;
+	border-radius: 25px;
+}
+
+.regform label
+{
+	font-family: "Times New Roman", Times, serif;
+	font-weight:900;
+	font-size:20px;
+	
+}
