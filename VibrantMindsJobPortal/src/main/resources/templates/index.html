@@ -91,17 +91,20 @@
 	<div class="container py-3">
 	<div class="row">	
 	<tr th:each="job: ${homeModel}">
-	<div class="col-md-3 mt-2">
-	<div class="card card text-dark cards mb-3">	
+	<div class="col-md-4 ">
+	<div class="card card text-dark cards mb-3" style="width: 19rem;height: 15rem;">	
 	<div class="card-body">
-    <h3 class=" card-title"> <h3 style="text-align: center" th:text="${job.name}" ></h3></h3>	
-	<p class="card-text">
-  <h5>company name:</h5><td th:text="${job.cname}" /></br>
-  <h5>package:</h5><td th:text="${job.jpackage}" /></br>
-  <h5> location:</h5> <td th:text="${job.location}" /></br>
-   <h5> post date:<h5></h5> <td  th:text="${job.pdate}" /></br>	
-   <h5>last date to apply:</h5> <td th:text="${job.ldate}" /></br>								
+    <h3 class=" card-title"> <h3 style="text-align: center;position:absolute;top:4px; left:40px;" th:text="${job.name}" ></h3></h3>	
+ 	<div class="cbody"Style="position:absolute; top:30px;">
+	<p class="card-text"style="margin:auto;">
+  <label><h5 style="display: inline">company name:</h5>&nbsp;&nbsp;<td style="display: inline" th:text="${job.cname}" /></label></br>
+  <h5 style="display: inline">package:</h5>&nbsp;&nbsp;<td style="display: inline" th:text="${job.jpackage}" /></br>
+  <h5 style="display: inline"> location:</h5>&nbsp;&nbsp; <td  style="display: inline" th:text="${job.location}" /></br>
+   <h5 style="display: inline"> post date:</h5> &nbsp;&nbsp;<td style="display: inline"  th:text="${job.pdate}" /></br>	
+   <h5 style="display: inline">last date to apply:</h5>&nbsp;&nbsp;<td style="display: inline" th:text="${job.ldate}" /></br>
+   <button type="submit" class="btn btn-success" Style="margin-left:69px;margin-top:6px;">Apply Here</button>						
 	</p>	
+	</div>
 	</div>		
 	</div>	
 	</div>	
