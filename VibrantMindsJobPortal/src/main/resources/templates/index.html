@@ -122,7 +122,7 @@
 <!-- ------------------------------------form------------------------------------------------------ -->
 
 <div class="regform">
-<form th:action="@{/regsave}" method="post">
+<form>
 <div class="modal-header text-center">
 <h4  class="modal-title text-center w-100 font-weight-bold">Create Account </h4>
 <span type="button" class="close" data-dismiss="modal" aria-lable="close">&times</span>
@@ -145,8 +145,8 @@
     <label >Contact</label>
     <input type="text" class="form-control"  name="contact"  placeholder=" Enter Contact">
   </div>
-  <button type="submit" class="btn btn-primary">Register</button>
-  <button type="submit" class="btn btn-primary">Log In</button>
+  <button type="submit" class="btn btn-primary"th:formaction="@{/regsave}"  formmethod="post">Register</button>
+  <button type="submit" class="btn btn-primary"th:formaction="@{/}"  formmethod="post">Log In</button>
 </form>
 </form>
  <h2 th:text=${message}></h2>
@@ -157,7 +157,15 @@
 </div>
 
 <!-- -----------------------------                             ----------->
-<!-- ---------------------------------------------------------------------------------------------- ----->
+<!-- -------------------------------------------Login--------------------------------------------------- ----->
+
+<!-- ------------------------------------form------------------------------------------------------ -->
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------------- -->
 	<!--=======================================scripts=======================================================-->
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
