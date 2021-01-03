@@ -115,7 +115,7 @@
 
 	<!-- ----------------------------------------------------------------------------------------------- -->
 <!-- ------------------ Registration Form  --------------------------------------------------------- -->
-<div class="modal fade" id="registerpage">
+<div class="modal" id="registerpage">
 <div class="modal-dialog ">
 <div class="modal-content ">
 
@@ -129,24 +129,24 @@
 </div>
 <div class="form-group">
     <label >User Name</label>
-    <input type="text" class="form-control" name="username"  placeholder="Enter Username">
+    <input type="text" class="form-control" name="username" value="" placeholder="Enter Username">
   
   </div>
   <div class="form-group">
     <label >Email address</label>
-    <input type="email" class="form-control"  name="email"  aria-describedby="emailHelp" placeholder="Enter email">
+    <input type="email" class="form-control"  name="email"  value="" placeholder="Enter email">
     
   </div>
   <div class="form-group">
     <label >Password</label>
-    <input type="password" class="form-control"  name="password"   placeholder=" Enter Password">
+    <input type="password" class="form-control"  name="password"  value="" placeholder=" Enter Password">
   </div>
    <div class="form-group">
     <label >Contact</label>
-    <input type="text" class="form-control"  name="contact"  placeholder=" Enter Contact">
+    <input type="text" class="form-control"  name="contact"  value="" placeholder=" Enter Contact">
   </div>
   <button type="submit" class="btn btn-primary"th:formaction="@{/regsave}"  formmethod="post">Register</button>
-  <button type="submit" class="btn btn-primary"th:formaction="@{/}"  formmethod="post">Log In</button>
+  <button type="submit" class="btn btn-primary"th:formaction="@{/studentlogin}"  formmethod="get">Log In</button>
 </form>
 </form>
  <h2 th:text=${message}></h2>

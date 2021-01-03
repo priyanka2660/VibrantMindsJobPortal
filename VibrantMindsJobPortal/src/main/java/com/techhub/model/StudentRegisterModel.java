@@ -3,7 +3,11 @@ package com.techhub.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="studregister")
+@Table(name="studregister",
+uniqueConstraints=
+@UniqueConstraint(columnNames={"email", "password"})
+
+		)
 public class StudentRegisterModel {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)

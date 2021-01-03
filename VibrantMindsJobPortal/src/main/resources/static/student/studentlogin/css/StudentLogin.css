@@ -1,0 +1,76 @@
+@charset "ISO-8859-1";
+
+
+.studlogin
+{
+background: #83a4d4;  
+background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  
+background: linear-gradient(to right, #b6fbff, #83a4d4); 
+	
+margin:30px;	
+}
+
+.studlogin form
+{
+	padding:40px;
+	
+}
+
+.studlogin h1
+{
+	font-family: 'Poppins', sans-serif;
+	text-align:center;
+	font-weight:bold;
+     font-size: 30px;
+     background: linear-gradient(to right, #76E91C 0%, #F90CC8 100%);
+     -webkit-background-clip: text;
+	 -webkit-text-fill-color: transparent;
+	 padding:20px;
+	
+}
+
+.formdiv div
+{
+	margin-left:200px;
+}
+
+
+.studlogin label
+{
+	margin-left:200px;
+	
+}
+
+.studlogin input
+{
+	width:400px;
+	height:50px;
+	display:inline;
+	background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;	
+}
+
+ .btn-grad {background-image: linear-gradient(to right, #525252 0%, #3d72b4  51%, #525252  100%)}
+  .btn-grad {
+            margin: 10px;
+            margin-top:20px;
+            margin-left:120px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+         
+

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
@@ -25,6 +26,7 @@ import com.techhub.model.LoginModel;
 import com.techhub.service.JobService;
 
 @Controller
+
 public class ApplicationController {
 	
 /*========================Parameters========================*/
@@ -38,8 +40,10 @@ public class ApplicationController {
 /*===============================Admin page=======================================*/
 	
 	@GetMapping("/admin")
-	public String goAdmin()
+	public String goAdmin(Model m)
 	{
+		String s= "admin"; 
+		m.addAttribute("name",s);
 		return "login";
 	}
 	
@@ -101,7 +105,6 @@ public class ApplicationController {
 /*========================================================================================*/	
 	
 /*=========================================view job========================================*/
-	
 	
 	@GetMapping("/viewjob")
 	public String goView(Model m)
