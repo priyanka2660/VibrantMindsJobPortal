@@ -1,13 +1,90 @@
-<!DOCTYPE html >
-<html  xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<!doctype html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+  	<title>Sidebar 02</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<h1>welcome to student master</h1>
+      <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+        
+		<div th:fragment="student">
 
-welcome <h1 th:text=${student.username}></h1>
-</body>
+	
+		<!-- banner--> 
+	    <div class=" container-fluid mr-5" style="padding-right:20px;">
+		<div class="container-fluid " style="background-image: url(../images/banner7.png);background-repeat:no-repeat; background-size: contain;
+		 resize:both; width:1500px; height:170px;">
+         <div class="text-white text-center py-4 px-4 my-0">
+        <div>
+           <!--    <h2 class="card-title h1-responsive mt-0" style="color:white;"><strong>VibrantMinds Technology</strong></h2>-->
+           <img src="../images_1/VT_logo.png" class="img-fluid" alt="Responsive image">
+            <p class="font-italic mr-2" style="color:purple;">Build your dream job here</p>
+           
+        </div>
+        </div>
+       </div>
+      </div>		
+		<!-- End of banner -->
+   
+     
+		<!-- sidebar -->
+		<div class="wrapper d-flex align-items-stretch mt-2 sbar">
+			  
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	          <i class="fa fa-bars"></i>
+	          <span class="sr-only">Toggle Menu</span>
+	        </button>
+        </div>
+				<div class="p-4 pt-5">
+		            <img src="../images_1/VT_logo.png" class="img-fluid" alt="Responsive image">
+	        <ul class="list-unstyled components mb-5">
+	          <li class="active">
+	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">StudentMaster</a>
+	            <ul class="collapse list-unstyled" id="homeSubmenu">
+                <li>
+                    <a >view post</a>
+                </li>
+                <li>
+                    <a th:href=@{/studprofile}>profile</a>
+                </li>
+                <li>
+                    <a>View Applied job</a>
+                </li>
+	            </ul>
+	          </li>
+	                  
+              </ul>
+	   	       
+	          </form>
+					</div>
+
+	       
+	      </div>
+    	</nav>
+      <!-- -----------------end of sidebar -->  
+         <!-- form -->
+    
+      
+       
+     <!-- end of form -->
+     
+      </div>            
+      
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    
+    
+  
+    
+  </body>
 </html>

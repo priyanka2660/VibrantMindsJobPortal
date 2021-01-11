@@ -26,7 +26,6 @@ import com.techhub.model.LoginModel;
 import com.techhub.service.JobService;
 
 @Controller
-
 public class ApplicationController {
 	
 /*========================Parameters========================*/

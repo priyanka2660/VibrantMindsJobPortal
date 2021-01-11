@@ -1,6 +1,8 @@
 package com.techhub.model;
 
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.*;
 
@@ -45,6 +47,12 @@ private String location;
 @Column(name="jdes",length=1000)
 private String jdes;
  
+@ManyToMany(fetch=FetchType.LAZY ,cascade=CascadeType.ALL)
+@JoinTable(name="stu_job",
+joinColumns= {@JoinColumn(name="j_id")},
+ inverseJoinColumns= {@JoinColumn(name="s_id")})
+private Set<StudentModel>emps=new HashSet<StudentModel>();
+
  public int getJid() {
 	return jid;
 }

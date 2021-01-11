@@ -15,8 +15,33 @@
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <!-- --------------------------------------------------------------------------------------------------- -->
+<!----------------------------------------    Ajax       ---------------->
+<script type="text/javascript">
+  function search(){
+	  
+	  var xhttp;
+	  var str=document.getElementById("searchtext").value;
+	
+	  xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	    document.getElementById("searchbyname").innerHTML = this.responseText;
+	    $('#search').modal('hide');
+	    $('body').removeClass('modal-open');
+
+	    }
+	  };
+	  xhttp.open("GET", "searchspecific?name="+str, true);
+	  xhttp.send();
+  }
+  
+</script>
+
+
+<!-- ----------------------------------------------------------------------- -->
 </head>
 <body>
+   <div id="searchbyname" >
 	<!-- --------------------------            nav bar                 ----------- -->
 	<header>
 	   <div class="navbar-wrapper">
@@ -57,17 +82,18 @@
 								class="sr-only">(current)</span></a></li>
 					    <li>
 					    
-					    <i class="fa fa-search search  ml-2.5" aria-hidden="true"></i>
+					    <i class="fa fa-search search  ml-2.5" aria-hidden="true"  data-toggle="modal" data-target="#search"></i>
 					    
-					    </li>			
+					    </li>	
+					    	<li class="navbar ml-auto  m-2 link ">
+					<a href="#" class="nav-item nav-link">Student</a>
+		 	       	   </li>		
 					</ul>
 				</div>
 				
 				
 			
-				<div class="navbar ml-auto  m-2 link ">
-					<a href="#" class="nav-item nav-link">Student</a>
-				</div>
+			
 			</nav>
         </div>
 		</div>
@@ -81,6 +107,14 @@
 
 
 	<!-- -----------------------------end of nav bar--------------------------------------------- -->
+	<!-- ---------------------------------- search box --------------------------------------------------- -->
+	<div class="modal btnsearch" id="search">
+      <input class="form-control" id="searchtext" type="text" placeholder="Search" aria-label="Search">
+      <button type="submit" class="btn btn-success" onclick="search()" data-dismiss="modal">Search Here</button>
+</div>
+	
+	<!-- ------------------------------------------------------------------------------------------------- -->
+	
 	<!-- -------------------------------------cards--------------------------------------------------- -->
 	
 	
@@ -88,7 +122,8 @@
 	                    
   <h1 class="headtext">upcoming campuses</h1>
   <hr style="border:2px solid purple;"></hr>         
-	                    </div>
+  </div>
+	
 	<div class="container py-3">
 	<div class="row">	
 	<tr th:each="job: ${homeModel}">
@@ -112,6 +147,8 @@
 	</div>
 	</div>
 	</tr>
+
+	
 
 	<!-- ----------------------------------------------------------------------------------------------- -->
 <!-- ------------------ Registration Form  --------------------------------------------------------- -->
@@ -179,6 +216,6 @@
 		integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
 		crossorigin="anonymous"></script>
 	<!-- =============================================================================================== -->
-
+</div>
 </body>
 </html>
