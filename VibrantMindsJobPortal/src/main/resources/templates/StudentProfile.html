@@ -2,7 +2,8 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Add New Job</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Create Profile</title>
 <!--===============================================================================================-->
 <link rel="icon" type="image/png" href="addjob/images/icons/favicon.ico" />
 <!--===============================================================================================-->
@@ -61,7 +62,7 @@
 
 
  <span class="admintitle">Create Profile</span>		
- <form th:action="@{/savejob}" method="post">
+ <form th:action="@{/studsave}" method="post" enctype="multipart/form-data">
   <div class="form-row">
  
     <div class="form-group col-md-4 column">
@@ -153,13 +154,13 @@
        </div> 
    <div class="custom-file" style="width:125%;">
     <input type="file" class="custom-file-input" id="customFile" >
-    <label class="custom-file-label" name= "resume" for="customFile">Resume</label>
+    <label class="custom-file-label" name= "resume"  size="50" for="customFile">Resume</label>
   </div>
  
   <button type="submit"  id="btn" class="btn-grad" >Submit</button> 
  
   
-
+<h1 th:text="${promsg}"></h1>
  
  
   

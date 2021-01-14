@@ -56,8 +56,11 @@ public class StudentModel {
 	private String experience;
     @Column(name="tskills")
 	private String tskills;
+    @Column(name="FileName")
+    private String filename;
     @Column(name="resume")
-	private byte[] resume;
+    @Lob
+	private byte[] resume; 
 	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="emps")
 	private Set<AdminModel> admin= new HashSet<AdminModel>();
 	
@@ -188,6 +191,12 @@ public class StudentModel {
 	}
 	public void setPgstream(String pgstream) {
 		this.pgstream = pgstream;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 	
