@@ -62,7 +62,7 @@
 
 
  <span class="admintitle">Create Profile</span>		
- <form th:action="@{/studsave}" method="post" enctype="multipart/form-data">
+ <form th:action="@{/studsave}" method="post" enctype="multipart/form-data" >
   <div class="form-row">
  
     <div class="form-group col-md-4 column">
@@ -153,10 +153,9 @@
      </div>  
        </div> 
    <div class="custom-file" style="width:125%;">
-    <input type="file" class="custom-file-input" id="customFile" >
-    <label class="custom-file-label" name= "resume"  size="50" for="customFile">Resume</label>
+    <input type="file" class="custom-file-input"   name= "resume" id="customFile" >
+    <label class="custom-file-label"  size="50" for="customFile">Resume</label>  
   </div>
- 
   <button type="submit"  id="btn" class="btn-grad" >Submit</button> 
  
   

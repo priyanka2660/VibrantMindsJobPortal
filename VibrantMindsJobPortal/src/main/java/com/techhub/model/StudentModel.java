@@ -13,6 +13,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 @Entity
 @Table(name="studprofile")
 public class StudentModel {
@@ -58,9 +59,10 @@ public class StudentModel {
 	private String tskills;
     @Column(name="FileName")
     private String filename;
+   
+    @Transient
     @Column(name="resume")
-    @Lob
-	private byte[] resume; 
+	private MultipartFile resume; 
 	@ManyToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="emps")
 	private Set<AdminModel> admin= new HashSet<AdminModel>();
 	
@@ -180,10 +182,11 @@ public class StudentModel {
 	public void setTskills(String tskills) {
 		this.tskills = tskills;
 	}
-	public byte[] getResume() {
+
+	public MultipartFile getResume() {
 		return resume;
 	}
-	public void setResume(byte[] resume) {
+	public void setResume(MultipartFile resume) {
 		this.resume = resume;
 	}
 	public String getPgstream() {
