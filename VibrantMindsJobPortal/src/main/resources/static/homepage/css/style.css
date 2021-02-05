@@ -45,8 +45,8 @@
 
 .btnsearch
 {
-	margin:20px;
-	margin-left:800px;	
+	margin:10px;
+	margin-left:500px;	
 }
 
 .btnsearch input
@@ -54,7 +54,7 @@
 	width:30%;
 	height:5%;
 	margin-top:170px;
-	margin-left:30px;
+	margin-left:10px;
 }
 
 .btnsearch button

@@ -10,37 +10,48 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 <link rel="stylesheet" type="text/css" th:href="@{/student/studentlogin/css/StudentLogin.css}">
 </head>
+
 <body>
+
 <div class="studlogin">
-<form th:action="@{/studlog}" method="post">
-<div class="formdiv">
- <h1>Student Login Form</h1>
+<form th:action="@{/studlog}" method="post" >
+
+
+<div class="formdiv div ">
+
+
+ <h1 text-center>Student Login Form</h1>
   <div class="form-group row">
+ 
   
-    <div class="col-sm-10">
-      <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
+    <div class="col-md-10 ">
+      <input type="email" name="email" class="form-control input-sm" id="inputEmail3" placeholder="Email" >
     </div>
   </div>
   <div class="form-group row">
     
-    <div class="col-sm-10">
-      <input type="password" class="form-control" name="password" id="inputPassword3" placeholder="Password">
+    <div class="col-md-10  " >
+      <input type="password" class="form-control input-sm" name="password" id="inputPassword3" placeholder="Password" >
     </div>
   </div>
   
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary btn-grad">Sign in</button>
+  <div class="container text-center">
+    <div class="col-xs-16  ">
+      <button type="submit" class="btn btn-primary btn-grad " >Sign in</button>
     </div>
   </div>
  
  </div>
-  
+ </div>
+ </div>
+  </div>
 </form>
 
-</div>
+
+
 
 
 <!--=======================================scripts=======================================================-->

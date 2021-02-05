@@ -147,16 +147,17 @@
   
  
       <div class="form-group">
-      <label for="inputCity" class="" style="margin-left:2px;">Skills</label>
+      <label for="inputCity" class="" style="margin-left:2px; ">Skills</label>
 
-      <textarea type="text" name="tskills" class="form-control" id="inputCity" rows="7" cols="20" placeholder=" Skills here....."></textarea>
+      <textarea type="text" name="tskills" class="form-control" id="inputCity"  placeholder=" Skills here....."style="max-width:100%;" cols="35" ></textarea>
      </div>  
        </div> 
    <div class="custom-file" style="width:125%;">
     <input type="file" class="custom-file-input"   name= "resume" id="customFile" >
     <label class="custom-file-label"  size="50" for="customFile">Resume</label>  
   </div>
-  <button type="submit"  id="btn" class="btn-grad" >Submit</button> 
+
+  <button type="submit"  id="btn" class="btn-grad d-flex justify-content-center d-md-table mx-auto" >Submit</button> 
  
   
 <h1 th:text="${promsg}"></h1>

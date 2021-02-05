@@ -1589,6 +1589,7 @@ pre {
     border: 0; }
 
 .form-control {
+	
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -8340,6 +8341,13 @@ a[data-toggle="collapse"] {
   .form-control:-moz-placeholder {
     /* Firefox 18- */
     color: rgba(0, 0, 0, 0.3); }
+    
+  
+
+    
+    
+    
+    
 
  /*====================================*/
 
